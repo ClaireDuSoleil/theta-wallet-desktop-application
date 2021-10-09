@@ -12,13 +12,13 @@ const ThetaNetworkTokens = [
     {
         type: TokenTypes.THETA,
         name: tokenTypeToTokenName(TokenTypes.THETA),
-        iconUrl: `/img/tokens/${TokenTypes.THETA}_large@2x.png`,
+        iconUrl: `./img/tokens/${TokenTypes.THETA}_large@2x.png`,
         href: "/wallet/tokens/" + TokenTypes.THETA
     },
     {
         type: TokenTypes.THETA_FUEL,
         name: tokenTypeToTokenName(TokenTypes.THETA_FUEL),
-        iconUrl: `/img/tokens/${TokenTypes.THETA_FUEL}_large@2x.png`,
+        iconUrl: `./img/tokens/${TokenTypes.THETA_FUEL}_large@2x.png`,
         href: "/wallet/tokens/" + TokenTypes.THETA_FUEL
     }];
 

@@ -14,14 +14,14 @@ const Alert = ({ message, options, style, close }) => {
 
     return (
         <div style={style} className={className}>
-            <img src={`/img/icons/alert-${type}@2x.png`}
+            <img src={`./img/icons/alert-${type}@2x.png`}
                  className="Alert__icon"
             />
             <div className="Alert__message">{message}</div>
             {
                 close &&
                 <button className="Alert__close-button" onClick={close}>
-                    <img src={'/img/icons/alert-x@2x.png'}/>
+                    <img src={'./img/icons/alert-x@2x.png'}/>
                 </button>
             }
         </div>

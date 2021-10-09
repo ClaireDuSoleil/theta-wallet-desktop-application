@@ -1,122 +1,117 @@
-.NavBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #1C243B;
-    height: 100px;
-    flex-shrink: 0;
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #1c243b;
+  height: 100px;
+  flex-shrink: 0;
 }
 
-.NavBar__logo{
-    height: 38px;
-    align-self: center;
+.NavBar__logo {
+  height: 38px;
+  align-self: center;
 }
 
-.NavBar--is-centered{
-    justify-content: center;
+.NavBar--is-centered {
+  justify-content: center;
 }
 
-.NavBar--is-centered .NavBar__logo{
-    /*height: 28px;*/
+.NavBar__account {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.NavBar__account{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.NavBar__wallet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.NavBar__wallet{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.NavBar__wallet-title {
+  font-size: 14px;
+  font-weight: normal;
+  color: #8a8fb5;
+  margin-right: 6px;
 }
 
-.NavBar__wallet-title{
-    font-size: 14px;
-    font-weight: normal;
-    color: #8A8FB5;
-    margin-right: 6px;
+.NavBar__wallet-address {
+  font-size: 14px;
+  font-weight: normal;
+  color: white;
 }
 
-.NavBar__wallet-address{
-    font-size: 14px;
-    font-weight: normal;
-    color: white;
+.NavBar__wallet-copy-address-icon {
+  cursor: pointer;
+  margin-left: 6px;
+  margin-top: 2px;
 }
 
-.NavBar__wallet-copy-address-icon{
-    cursor: pointer;
-    margin-left: 6px;
-    margin-top: 2px;
+.NavBar__wallet-copy-address-icon img {
+  height: 19px;
 }
 
-.NavBar__wallet-copy-address-icon img{
-    height: 19px;
+.NavBar__logout {
+  color: #8a8fb5;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: opacity, 0.2s, ease-in-out;
 }
 
-.NavBar__logout{
-    color: #8A8FB5;
-    margin-top: 6px;
-    cursor: pointer;
-    transition: opacity, 0.2s, ease-in-out;
+.NavBar__network-badge {
+  position: relative;
+  padding: 0;
+  padding-left: 11px;
+  padding-right: 22px;
+  line-height: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  background: #29b3eb;
+  background: linear-gradient(to right, #29b3eb 0%, #21edba 100%);
+  background-size: 100%;
+  color: #1c243b;
+  padding-top: 3px;
+  height: 18px;
+  box-sizing: border-box;
 }
 
-.NavBar__network-badge{
-    position: relative;
-    padding: 0;
-    padding-left: 11px;
-    padding-right: 22px;
-    line-height: 12px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 2px;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    background: #29b3eb;
-    background: linear-gradient(to right, #29b3eb 0%,#21edba 100%);
-    background-size: 100%;
-    color: #1C243B;
-    padding-top: 3px;
-    height: 18px;
-    box-sizing: border-box;
+.NavBar__network-badge:after {
+  display: block;
+  content: '';
+  width: 9px;
+  height: 5px;
+  background: transparent url('../img/icons/dropdown-arrow@2x.png') no-repeat;
+  background-size: 9px 5px;
+  position: absolute;
+  right: 7px;
+  top: 6px;
 }
 
-.NavBar__network-badge:after{
-    display: block;
-    content: "";
-    width: 9px;
-    height: 5px;
-    background: transparent url('/img/icons/dropdown-arrow@2x.png') no-repeat;
-    background-size: 9px 5px;
-    position: absolute;
-    right: 7px;
-    top: 6px;
+.NavBar__network-badge:hover {
+  background: #21edba;
 }
 
+.NavBar__network-badge.NavBar__network-badge--is-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
 
-.NavBar__network-badge:hover{
-    background: #21edba;
+  /*Make it look disabled and change spacing because we removed the dropdown arrow*/
+  background: #1c243b;
+  padding-left: 11px;
+  padding-right: 11px;
+  color: #8a8fb5;
 }
 
-.NavBar__network-badge.NavBar__network-badge--is-disabled{
-    cursor: not-allowed;
-    pointer-events: none;
-
-    /*Make it look disabled and change spacing because we removed the dropdown arrow*/
-    background: #1C243B;
-    padding-left: 11px;
-    padding-right: 11px;
-    color: #8A8FB5;
-}
-
-.NavBar__network-badge.NavBar__network-badge--is-disabled:after{
-    display: none;
+.NavBar__network-badge.NavBar__network-badge--is-disabled:after {
+  display: none;
 }

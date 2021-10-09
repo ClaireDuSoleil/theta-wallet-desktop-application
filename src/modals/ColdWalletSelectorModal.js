@@ -71,13 +71,13 @@ export class ColdWalletAddressRow extends React.Component {
                     <div className="ColdWalletSelectorModal__amount-container">
                         <div className="ColdWalletSelectorModal__amount">{balances.theta}</div>
                         <img className="ColdWalletSelectorModal__amount-icon"
-                             src="/img/tokens/theta_large@2x.png"
+                             src="./img/tokens/theta_large@2x.png"
                         />
                     </div>
                     <div className="ColdWalletSelectorModal__amount-container">
                         <div className="ColdWalletSelectorModal__amount">{balances.tfuel}</div>
                         <img className="ColdWalletSelectorModal__amount-icon"
-                             src="/img/tokens/tfuel_large@2x.png"
+                             src="./img/tokens/tfuel_large@2x.png"
                         />
                     </div>
                 </React.Fragment>
@@ -89,7 +89,7 @@ export class ColdWalletAddressRow extends React.Component {
                  key={serializedPath}
                  onClick={onClick} >
                 <img className="ColdWalletSelectorModal__checkmark-icon"
-                     src={isSelected ? "/img/icons/checkmark-green@2x.png" : "/img/icons/checkmark-transparent@2x.png"}
+                     src={isSelected ? "./img/icons/checkmark-green@2x.png" : "./img/icons/checkmark-transparent@2x.png"}
                 />
                 <div className="ColdWalletSelectorModal__row-address">
                     {address}

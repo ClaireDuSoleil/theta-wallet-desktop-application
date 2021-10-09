@@ -105,10 +105,10 @@ export class WalletPage extends React.Component {
                                 sticky={true}>
                         <div className="WalletPage__header-buttons">
                             <GhostButton title="Send"
-                                         iconUrl="/img/icons/send@2x.png"
+                                         iconUrl="./img/icons/send@2x.png"
                                          onClick={this.handleSendClick}/>
                             <GhostButton title="Receive"
-                                         iconUrl="/img/icons/receive@2x.png"
+                                         iconUrl="./img/icons/receive@2x.png"
                                          style={{marginLeft: 12}}
                                          onClick={this.handleReceiveClick}/>
                         </div>
@@ -126,7 +126,7 @@ export class WalletPage extends React.Component {
 
                     {
                         (this.props.transactions.length === 0 && this.props.isLoadingTransactions === false) &&
-                        <EmptyState icon="/img/icons/empty-transactions@2x.png"
+                        <EmptyState icon="./img/icons/empty-transactions@2x.png"
                                     title="No Transactions"
                         />
                     }

@@ -10,7 +10,7 @@ class EthereumTransactionListItem extends React.Component {
         let { transaction } = this.props;
         let {from, to, token_symbol, dec_value, type, time_stamp, bound, is_local} = transaction;
         let isReceived = (bound === "inbound");
-        let iconUrl = `/img/tokens/${type}_small@2x.png`;
+        let iconUrl = `./img/tokens/${type}_small@2x.png`;
         let explorerUrl = `https://etherscan.io/tx/${transaction.hash}`;
 
         //Truncate the addresses to help reduce the run ons

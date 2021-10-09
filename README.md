@@ -1,33 +1,45 @@
-## Theta Wallet for Web
+## Theta Wallet Desktop Application
 
-Reference implementation of the Theta Web Wallet. In addition to the standard wallet functionalities like sending and receiving Theta/TFuel, it also allows the user to deploy and interact with smart contracts running on the Theta blockchain. To see the Theta Web Wallet in action, please visit [https://wallet.thetatoken.org/](https://wallet.thetatoken.org/).
+This is a fork of the Theta Web Wallet (https://github.com/thetatoken/theta-wallet-web) that creates a desktop wallet application from the forked source code using Electron.  At this time, one additional feature has been added that allows for the creation of multiple receive addresses based on the mnemonic phrase.  The user can list the new addresses and, optionally, switch the wallet to one of these addresses to perform transactions.
 
-### Setup
+## Disclaimer: Use At Your Own Risk!!!
 
-```yarn install```
-
-```yarn upgrade```
-
-### Development
-
-```yarn start```
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This application was created to submit to the 2021 Theta Hackathon. It has _not_ been approved by Theta Labs. Many of the features, such as staking, have not been tested and may be removed in future versions. **Use at your own risk!!**
 
 
-### Production
+## Setup
 
-```yarn build```
+    yarn install
+    yarn upgrade
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development
 
-The build is minified and the filenames include the hashes.<br>
+You need to have electron-packager installed globally to build packages for distributuion.
 
-### License
+To build a windows install package (.msi):
+
+    yarn electron:build-win
+
+To build a Mac OS X install package (.dmg):
+
+    yarn electron:build-mac
+
+## Debugging
+
+Logfiles are found on Windows in 
+
+    C:\Users\YOUR_NAME\AppData\Local\Programs\theta-desktop-wallet
+Logfiles are found on Mac OS X here:
+
+    /Users/YOUR_NAME/Library/Logs/theta-desktop-wallet
+
+To debug an installed production binary, run binary from the command line and add --remote-debugging-port=8315.  For example, on Windows:
+
+    "C:\Users\claire\AppData\Local\Programs\theta-desktop-wallet\Theta Desktop Wallet.exe" --remote-debugging-port=8315
+
+And then open a browser to: http://localhost:8315
+
+
+## License
 
 The Theta Web Wallet reference implementation is licensed under the [GNU License](./LICENSE).

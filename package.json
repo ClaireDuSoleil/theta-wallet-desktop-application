@@ -1,13 +1,41 @@
 {
-  "name": "theta-wallet-web",
-  "version": "0.1.0",
+  "name": "theta-desktop-wallet",
+  "version": "1.0.0",
   "private": true,
+  "main": "electron/main.js",
+  "homepage": "./",
+  "author": "Claire DuSoleil",
+  "description": "A desktop application to manage a Theta wallet.",
+  "build": {
+    "appId": "org.theta.DesktopWallet",
+    "productName": "Theta Desktop Wallet",
+    "files": [
+      "build/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "extends": null,
+    "mac": {
+      "icon": "electron/MacTheta.icns",
+      "type": "distribution"
+    },
+    "win": {
+      "icon": "electron/WindowsTheta.ico",
+      "target": "msi"
+    },
+    "msi": {
+      "runAfterFinish": false
+    }
+  },
   "dependencies": {
     "@ledgerhq/hw-app-eth": "^4.72.1",
     "@ledgerhq/hw-transport-u2f": "^4.72.1",
     "await-timeout": "^0.3.0",
     "bignumber.js": "^8.0.1",
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.3",
+    "electron-is": "^3.0.0",
+    "electron-log": "^4.4.1",
     "ethereumjs-util": "^6.1.0",
     "ethers": "^4.0.26",
     "identicon.js": "^2.3.3",
@@ -32,26 +60,38 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
+    "semantic-ui-react": "^2.0.4",
     "trezor-connect": "^8.1.27",
     "web3": "^1.0.0-beta.52"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "cross-env BROWSER=none react-scripts start",
     "build-new": "react-app-rewired build",
     "test-new": "react-app-rewired test --env=jsdom",
     "start-old": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy--beta": "s3_website push --config-dir configs/beta",
     "deploy--staging": "s3_website push --config-dir configs/staging",
-    "deploy--prod": "s3_website push --config-dir configs/prod"
+    "deploy--prod": "s3_website push --config-dir configs/prod",
+    "electron:start": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron": "electron .",
+    "electron:nodev": "electron --noDevServer .",
+    "build-electron": "react-scripts build",
+    "electron:build-mac": "yarn build-electron && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build --publish never",
+    "electron:build-win": "yarn build-electron && electron-builder build --publish never"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "devDependencies": {
-    "css-loader": "^2.1.1"
+    "concurrently": "^6.2.1",
+    "css-loader": "^2.1.1",
+    "electron": "^14.0.1",
+    "electron-builder": "^22.11.7",
+    "electron-devtools-installer": "^3.2.0",
+    "wait-on": "^6.0.0"
   },
   "browserslist": {
     "production": [

@@ -75,7 +75,7 @@ export default class ReceiveModal extends React.Component {
                     </div>
                     <div className="ReceiveModal__buttons">
                         <GhostButton title="Copy"
-                                     iconUrl="/img/icons/copy@2x.png"
+                                     iconUrl="./img/icons/copy@2x.png"
                                      onClick={this.handleCopyAddressClick}
                         />
                     </div>
@@ -91,7 +91,7 @@ export default class ReceiveModal extends React.Component {
                                          disabled={isLoading}
                                          loading={isLoading}
                                          className={"ReceiveModal__faucet-button"}
-                                         iconUrl="/img/tab-bar/receive@2x.png"
+                                         iconUrl="./img/tab-bar/receive@2x.png"
                                          onClick={this.handleFaucetClick}
                             />
                             <div className="ReceiveModal__faucet-message">

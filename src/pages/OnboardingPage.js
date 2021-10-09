@@ -21,7 +21,7 @@ const OnboardingSteps = [
 class OnboardingPage extends React.Component {
     render() {
         let onboardingStep = parseInt(this.props.match.params.onboardingStep);
-        let onboardingImageUrl = '/img/onboarding/' + onboardingStep + '@2x.png';
+        let onboardingImageUrl = './img/onboarding/' + onboardingStep + '@2x.png';
         let {title, description} = OnboardingSteps[onboardingStep];
         let footerContent = null;
 

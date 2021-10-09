@@ -311,7 +311,7 @@ class UnlockWalletViaKeystoreFile extends React.Component {
         return (
             <div className="UnlockWalletViaKeystoreFile">
                 <DropZone title="Drop keystore here"
-                          icon="/img/icons/theta-file@2x.png"
+                          icon="./img/icons/theta-file@2x.png"
                           onDrop={this.handleKeystoreFileDrop}/>
                 <div className="UnlockWalletViaKeystoreFile__title">
                     Please select your keystore file
@@ -442,12 +442,12 @@ class UnlockWalletViaColdWallet extends React.Component {
 
                 <div className="UnlockWalletViaColdWallet__cold-wallet-hardware-select">
                     <HardwareOptionButton title="Trezor"
-                                          iconUrl={(this.state.hardware === "trezor" ? "/img/icons/checkmark-green@2x.png" : null)}
+                                          iconUrl={(this.state.hardware === "trezor" ? "./img/icons/checkmark-green@2x.png" : null)}
                                           isSelected={(this.state.hardware === "trezor")}
                                           onClick={this.handleTrezorClick}
                     />
                     <HardwareOptionButton title="Ledger"
-                                          iconUrl={(this.state.hardware === "ledger" ? "/img/icons/checkmark-green@2x.png" : null)}
+                                          iconUrl={(this.state.hardware === "ledger" ? "./img/icons/checkmark-green@2x.png" : null)}
                                           isSelected={(this.state.hardware === "ledger")}
                                           onClick={this.handleLedgerClick}
                     />

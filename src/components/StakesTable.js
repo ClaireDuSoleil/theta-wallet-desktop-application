@@ -19,10 +19,10 @@ function stakeTypeToNodeType(stakeType){
 
 function stakeTypeToTokenUrl(stakeType){
     if(stakeType === 'vcp' || stakeType === 'gcp'){
-        return "/img/tokens/theta_large@2x.png";
+        return "./img/tokens/theta_large@2x.png";
     }
     else if(stakeType === 'eenp'){
-        return "/img/tokens/tfuel_large@2x.png";
+        return "./img/tokens/tfuel_large@2x.png";
     }
 }
 

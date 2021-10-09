@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>About Theta Wallet</title>
+  </head>
+
+  <body>
+    <div class="container about center-align">
+      <h5
+        style="
+          font-size: 20px;
+          font-weight: 600;
+          text-align: center;
+          color: white;
+          margin-bottom: 30px;
+        "
+      >
+        Theta Desktop Wallet
+      </h5>
+      <ul
+        class="collection"
+        style="font-size: 15px; font-weight: 500; color: white; margin-bottom: 55px"
+      >
+        <li>Developers: Theta Labs & Claire DuSoleil</li>
+        <li>Version: 1.0.0</li>
+      </ul>
+    </div>
+    <style>
+      .container {
+        height: 75px;
+        position: relative;
+        margin-top: 30px;
+      }
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    </style>
+
+    <div class="container">
+      <div class="center">
+        <button style="font-size: 20px; font-weight: 600; width: 50; height: 30px" id="closeAbout">
+          Close
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const closeAbout = document.getElementById('closeAbout');
+    closeAbout.addEventListener('click', () => {
+      window.api.send('toMain', 'close-me');
+    });
+  </script>
+</html>
