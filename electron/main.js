@@ -5,6 +5,7 @@ const path = require('path');
 const {ipcMain} = require('electron');
 const log = require('electron-log');
 const isMac = process.platform === 'darwin' ? true : false;
+const {default: installExtension, REACT_DEVELOPER_TOOLS} = require('electron-devtools-installer');
 const isDevServer = isDev && process.argv.indexOf('--noDevServer') === -1;
 
 let mainWindow;
@@ -69,14 +70,23 @@ const createMainWindow = () => {
 
 app.whenReady().then(() => {
   createMainWindow();
-  //getting logging working from both main and renderer was an absolute nightmare
-  //but this finally worked
+  if (isDev) {
+    installExtension(REACT_DEVELOPER_TOOLS)
+      .then((name) => {
+        console.log(`Added Extension:  ${name}`);
+      })
+      .catch((err) => {
+        console.log('An error occurred: ', err);
+      });
+  }
   //https://www.electronjs.org/docs/api/web-contents#event-console-message
-  mainWindow.webContents.on('console-message', (event, level, message, line, sourceId) => {
-    //log to both console and log file
-    console.log(message + ' ' + sourceId + ' (' + line + ')');
-    log.info(message + ' ' + sourceId + ' (' + line + ')');
-  });
+  if (!isDev) {
+    mainWindow.webContents.on('console-message', (event, level, message, line, sourceId) => {
+      //log to both console and log file
+      console.log(message + ' ' + sourceId + ' (' + line + ')');
+      log.info(message + ' ' + sourceId + ' (' + line + ')');
+    });
+  }
 });
 
 app.on('activate', () => {
