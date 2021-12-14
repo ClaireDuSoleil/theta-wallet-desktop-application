@@ -34,6 +34,7 @@
     "bignumber.js": "^8.0.1",
     "classnames": "^2.2.6",
     "cross-env": "^7.0.3",
+    "electron-devtools-installer": "^3.2.0",
     "electron-is": "^3.0.0",
     "electron-log": "^4.4.1",
     "ethereumjs-util": "^6.1.0",
@@ -41,7 +42,7 @@
     "identicon.js": "^2.3.3",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
-    "react": "^16.8.2",
+    "react": "^17.0.2",
     "react-alert": "4.0.4",
     "react-alert-template-basic": "^1.0.0",
     "react-app-rewire-hot-loader": "^2.0.1",
@@ -90,7 +91,6 @@
     "css-loader": "^2.1.1",
     "electron": "^14.0.1",
     "electron-builder": "^22.11.7",
-    "electron-devtools-installer": "^3.2.0",
     "wait-on": "^6.0.0"
   },
   "browserslist": {
